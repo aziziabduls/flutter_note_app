@@ -72,11 +72,8 @@ class _NotePageState extends State<NotePage> {
                         color: Theme.of(context).primaryColor,
                         borderRadius: BorderRadius.circular(50),
                         onPressed: () {
-                          if (textEditingController.text.isNotEmpty ||
-                              textEditingController.text != '') {
-                            context
-                                .read<NoteDatabase>()
-                                .addNote(textEditingController.text);
+                          if (textEditingController.text.isNotEmpty || textEditingController.text != '') {
+                            context.read<NoteDatabase>().addNote(textEditingController.text);
                             // Clear text editing
                             textEditingController.clear();
 
@@ -168,10 +165,8 @@ class _NotePageState extends State<NotePage> {
                         color: Theme.of(context).primaryColor,
                         borderRadius: BorderRadius.circular(50),
                         onPressed: () {
-                          if (textEditingController.text.isNotEmpty ||
-                              textEditingController.text != '') {
-                            context.read<NoteDatabase>().updateNotes(
-                                note.id, textEditingController.text);
+                          if (textEditingController.text.isNotEmpty || textEditingController.text != '') {
+                            context.read<NoteDatabase>().updateNotes(note.id, textEditingController.text);
                             // Clear text editing
                             textEditingController.clear();
 
@@ -259,6 +254,7 @@ class _NotePageState extends State<NotePage> {
                   borderRadius: BorderRadius.circular(50),
                   onPressed: () {
                     context.read<NoteDatabase>().deleteNote(id);
+                    textEditingController.clear;
                     fetchNotes();
                     Navigator.pop(context);
                   },

@@ -4,6 +4,9 @@ A new Flutter project.
 
 ## Getting Started
 
+flutter pub add isar isar_flutter_libs path_provider
+flutter pub add -d isar_generator build_runner
+
 This project is a starting point for a Flutter application.
 
 A few resources to get you started if this is your first Flutter project:
